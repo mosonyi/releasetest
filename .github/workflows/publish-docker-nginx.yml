@@ -39,11 +39,11 @@ jobs:
         run: |
             docker image load --input nginx-test.tar.gz
             docker images --all
-            docker push mosonyi/nginx-test::${{ github.event.release.tag_name }}
+            docker push mosonyi/nginx-test:${{ github.event.release.tag_name }}
   
       - name: Delete images
         run: |
-          if [[ "$(docker images -q mosonyi/nginx-test::${{ github.event.release.tag_name }} 2> /dev/null)" != "" ]]; then
-              docker image rmi --force mosonyi/nginx-test::${{ github.event.release.tag_name }} }} 2>/dev/null
+          if [[ "$(docker images -q mosonyi/nginx-test:${{ github.event.release.tag_name }} 2> /dev/null)" != "" ]]; then
+              docker image rmi --force mosonyi/nginx-test:${{ github.event.release.tag_name }} }} 2>/dev/null
           fi
           docker images --all
