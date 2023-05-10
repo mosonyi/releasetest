@@ -90,6 +90,8 @@ jobs:
           body: |
             NULL
           draft: true
+          files: |
+            nginx-test-${{ github.ref_name }}.tar.gz
 
       - name: Delete images
         run: |
