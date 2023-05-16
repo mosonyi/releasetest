@@ -1,6 +1,6 @@
 The privkey.pem is generated with `openssl genrsa -aes128 -passout pass:foobar -out privkey.pem 3072`
 
-and base64 encoded with `base64 -i privkey.pem > privkey.pem.base64`z
+and base64 encoded with `base64 -i privkey.pem > privkey.pem.base64`
 
 It will be decoded with `base64 -i --decode privkey.pem.base64 > privkey.pem` in CI.
 
